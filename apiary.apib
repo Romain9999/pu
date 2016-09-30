@@ -1,0 +1,67 @@
+FORMAT: 1A
+HOST: http://passurbain.api.org/
+
+# PassUrbain
+
+API allowing consumers to do CRUD and LIST PassUrbain metier repository.
+
+## Services Collection [/services]
+
+### List All Service [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "services": [
+                    {
+                        "name": "Service1",
+                        "description": "descirption service 1",
+                        "family": "family 1"
+                    }, {
+                        "name": "Service2",
+                        "description": "descirption service 2",
+                        "family": "family 2"
+                    }, {
+                        "name": "Service2",
+                        "description": "descirption service 2",
+                        "family": "family 2"
+                    }, {
+                        "name": "Service3",
+                        "description": "descirption service 3",
+                        "family": "family 3"
+                    }
+                ]
+            }
+        ]
+
+### Create a New Service [POST]
+
+You may create your service using this action. It takes a JSON
+object containing all services data
+
++ Request (application/json)
+
+        {
+            "service": {
+                "name": "Service4",
+                "description": "descirption service 4",
+                "family": "family 4"
+            }
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /service/4
+
+    + Body
+
+            {
+                "service": {
+                    "name": "Service4",
+                    "description": "descirption service 4",
+                    "family": "family 4"
+                }
+            }
