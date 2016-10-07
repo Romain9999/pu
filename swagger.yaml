@@ -174,7 +174,8 @@ definitions:
         type: integer
         format: int64
       serviceId:
-        type: string
+        type: integer
+        format: int64
       date:
         type: string        
   Error:
